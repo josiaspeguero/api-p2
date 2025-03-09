@@ -4,7 +4,7 @@ import { Router } from "express";
 const router = Router();
 router.get("/", async (req, res) => {
   const result = await connection.execute("SELECT * FROM Agenda");
-  res.json(result)
+  res.json(result.rows)
 });
 
 router.post("/", async (req, res) => {
